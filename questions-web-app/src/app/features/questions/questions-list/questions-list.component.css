@@ -1,0 +1,11 @@
+mat-list {
+    display: flex;
+    border-bottom: 1px solid black;
+    width: 70%;
+    margin: 30px;
+    text-align: center;
+}
+
+.questions-list {
+  margin-left: 20%;
+}

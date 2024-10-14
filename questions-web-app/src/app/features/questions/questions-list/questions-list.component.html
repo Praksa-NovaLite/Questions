@@ -1,0 +1,9 @@
+<div class="questions-list">
+    <mat-list *ngFor="let question of questions">
+        <mat-list-item class="title-list-item">{{question.title}}</mat-list-item>
+        <mat-list-item>{{ categoryType[question.category!] }}</mat-list-item>
+        <mat-list-item>{{ answerType[question.type!] }}</mat-list-item>
+        <mat-list-item>{{question.score}}</mat-list-item>
+        <button mat-button color="primary" (click)="navigate(question.id)">Details</button>
+    </mat-list>
+</div>

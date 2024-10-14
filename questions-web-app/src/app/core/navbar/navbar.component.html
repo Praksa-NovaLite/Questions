@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <span>NovaForms</span>
+    <div class="spacer"></div>
+    <button mat-button [matMenuTriggerFor]="menu">Questions</button>
+    <mat-menu #menu="matMenu">
+        <a href="questions" mat-menu-item>Questions</a>
+        <a href="create" mat-menu-item>Create question</a>
+        <a href="add?" mat-menu-item>Generate exam</a>
+    </mat-menu>
+</mat-toolbar>

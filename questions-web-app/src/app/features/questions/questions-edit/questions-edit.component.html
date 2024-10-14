@@ -1,0 +1,37 @@
+
+<form [formGroup]="form" class="myForm">
+  <h1>{{ id ? 'EDIT QUESTION' : 'CREATE QUESTION' }}</h1>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" type="text" placeholder="Title">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of categories" [value]="category">{{ categoryType[category] }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Answer Type</mat-label>
+    <mat-select formControlName="answerType">
+      <mat-option *ngFor="let type of types" [value]="type">{{ answerType[type] }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Score</mat-label>
+    <input matInput formControlName="score" type="number" placeholder="Title">
+  </mat-form-field>
+  <div formArrayName="answers">
+    <div class="answer-class" *ngFor="let answerGroup of answersFormArray.controls; let i=index" [formGroupName]="i">
+        <mat-checkbox class="answer-checkbox" formControlName="isCorrect"></mat-checkbox>
+      <mat-form-field>
+        <mat-label>Answer:</mat-label>
+        <input class="answer-input" matInput type="text" formControlName="answerName">
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-button color="primary" (click)="addAnswer()">Add answer</button>
+  <button mat-button color="primary" type="submit" (click)="id ? updateQuestion() : createQuestion()">
+    {{ id ? 'Edit' : 'Submit' }}
+  </button>
+</form>

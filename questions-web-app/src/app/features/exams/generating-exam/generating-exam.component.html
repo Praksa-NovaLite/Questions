@@ -1,0 +1,9 @@
+<div [formGroup]="form" class="grid-container">
+    <div *ngFor="let category of categories" (click)="toggleCategorySelection(category)" [class.selected]="isCategorySelected(category)" class="grid-item">
+      {{ categoryTypes[category] }}
+    </div>
+  </div>
+  
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="generateExam()">Generate Exam</button>
+  </div>

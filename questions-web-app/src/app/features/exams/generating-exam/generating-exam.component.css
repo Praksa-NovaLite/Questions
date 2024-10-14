@@ -1,0 +1,31 @@
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centriranje po horizontali */
+    align-items: center; /* Centriranje po vertikali */
+    gap: 20px; /* Prostor između kvadratića */
+    margin: auto; /* Centriranje u odnosu na roditeljski element */
+  }
+  
+  .grid-item {
+    background-color: #f4faff;
+    width: 200px;
+    height: 200px; 
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 18px; 
+   
+  }
+  
+  .grid-item.selected {
+    background-color:  #ccdff0;/* Stil za selektovane kvadratiće */
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Dodajte bilo koji potreban odstup između kvadratića i dugmeta */
+  }
+  
